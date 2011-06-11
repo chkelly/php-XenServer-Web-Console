@@ -1,0 +1,28 @@
+<!-- 
+   This is an example of running TightVNC Java viewer 1.5 using automatic
+   SSH tunneling.  This example would make the Java applet connect to
+   192.168.0.2 via SSH and then connect from that SSH host to localhost
+   with TightVNC (port 5901).  Note that all traffic from the viewer to
+   192.168.0.2 will be encrypted with SSH.
+-->
+
+<HTML>
+<TITLE>
+TightVNC desktop
+</TITLE>
+<BODY>
+
+<APPLET ARCHIVE="TightVncViewer.jar"
+        CODE="com.tightvnc.vncviewer.VncViewer"
+        WIDTH="1" HEIGHT="1">
+<PARAM NAME="SOCKETFACTORY" VALUE="com.tightvnc.vncviewer.SshTunneledSocketFactory">
+<PARAM NAME="SSHHOST" VALUE="192.168.0.2">
+<PARAM NAME="HOST" VALUE="localhost">
+<PARAM NAME="PORT" VALUE="5901">
+<PARAM NAME="Open New Window" VALUE="yes">
+</APPLET>
+
+<BR>
+<A href="http://www.tightvnc.com/">TightVNC Web Site</A>
+</BODY>
+</HTML>
